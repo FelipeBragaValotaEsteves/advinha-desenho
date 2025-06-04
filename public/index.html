@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desenhe e Adivinhe</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="login">
+        <div class="div-logo">
+            <img src="./assets/logo.png" alt="Logo">
+        </div>
+
+        <div class="login-form">
+            <input id="nameInput" type="text" maxlength="15" placeholder="Seu apelido">
+            <input id="roomCodeInput" type="text" maxlength="5" placeholder="Código da sala">
+        </div>
+        <div id="error"></div>
+        <div class="game-buttons">
+            <button id="createBtn">Criar Partida</button>
+            <span>ou</span>
+            <button id="joinBtn">Entrar com Código</button>
+        </div>
+    </div>
+
+    <div id="lobby" style="display: none;">
+        <div class="div-lobby">
+            <h1>Sala: <strong id="roomCodeDisplay"></strong></h1>
+            <div id="lobbyStatus"></div>
+        </div>
+        <div class="div-lobby">
+            <div>
+                <p>Jogadores na sala:</p>
+                <div id="playersList"></div>
+            </div>
+            <button id="startBtn">Iniciar Partida</button>
+        </div>
+    </div>
+
+    <div id="game" style="display: none;">
+        <div id="messageBox" class="hidden"></div>
+
+        <div id="postGameActions" class="hidden">
+            <button id="restartBtn">Reiniciar Partida</button>
+            <button id="leaveBtn">Sair da Sala</button>
+        </div>
+
+        <div id="leaderboard"></div>
+        <div id="main-content">
+            <div id="top-row">
+                <div id="roundInfo"></div>
+                <div id="wordHint"></div>
+            </div>
+            <canvas id="canvas" width="900" height="400"></canvas>
+            <div id="bottom-row">
+                <div id="status"></div>
+                <div id="attempts"></div>
+                <div id="guess">
+                    <input id="guessInput" type="text" placeholder="Digite seu palpite">
+                    <button id="guessBtn">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+
+</html>
